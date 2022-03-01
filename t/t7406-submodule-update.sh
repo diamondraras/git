@@ -1071,4 +1071,17 @@ test_expect_success 'submodule update --quiet passes quietness to fetch with a s
 	)
 '
 
+test_expect_success 'submodule update --filter requires --init' '
+	test_must_fail git -C super submodule update --filter blob:none 2>err &&
+	grep "usage:" err
+'
+
+test_expect_success 'submodule update --filter sets partial clone settings' '
+	test_when_finished "rm -rf super-filter" &&
+	git clone cloned super-filter &&
+	git -C super-filter submodule update --init --filter blob:none &&
+	test_cmp_config -C super-filter/submodule true remote.origin.promisor &&
+	test_cmp_config -C super-filter/submodule blob:none remote.origin.partialclonefilter
+'
+
 test_done
