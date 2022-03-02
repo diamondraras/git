@@ -1,0 +1,19 @@
+println("Hello World?")
+(1) (-1e10) (0xabcdef) 'y'
+100_000
+[x] x->y x.y
+!x x.inv() x*y x&y
+a-=b
+x*y x/y x%y
+x+y x-y
+x shl y x shr y
+x<y x<=y x>y x>=y
+x==y x!=y x===y
+x and y
+x^y
+x or y
+x&&y
+x||y
+x=y x+=y x-=y x*=y x/=y x%=y x<<=y x>>=y x&=y x^=y x|=y
+x,y
+-x+2

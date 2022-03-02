@@ -168,6 +168,14 @@ PATTERNS("java",
 	 "|[-+0-9.e]+[fFlL]?|0[xXbB]?[0-9a-fA-F]+[lL]?"
 	 "|[-+*/<>%&^|=!]="
 	 "|--|\\+\\+|<<=?|>>>?=?|&&|\\|\\|"),
+PATTERNS("kotlin",
+	 "^[ \t]*(([a-z]+[ \t]+)*(fun|class|interface)[ \t]+.*)$",
+	 /* -- */
+	 "[_]?[a-zA-Z][a-zA-Z0-9_]*"
+	 /*hexadecimal, integers and binary numbers*/
+	 "|(0x0F|0b)?[0-9._]+([Ee][-+]?[0-9]+)?[fFlLuU]*"
+	 /*match unary and binary operators*/
+	 "|[-+*/<>%&^|=!]*"),
 PATTERNS("markdown",
 	 "^ {0,3}#{1,6}[ \t].*",
 	 /* -- */
